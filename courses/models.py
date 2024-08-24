@@ -10,8 +10,8 @@ class Course(models.Model):
 
 class CourseInstance(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
-    year = models.IntegerField()
-    semester = models.IntegerField()
+    year = models.CharField(max_length=20)
+    semester = models.CharField(max_length=20)
 
     def __str__(self):
         return f"{self.course.course_code} ({self.year} - Sem {self.semester})"
