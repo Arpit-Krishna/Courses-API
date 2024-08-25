@@ -9,4 +9,4 @@ class CourseSerializer(serializers.ModelSerializer):
 class CourseInstanceSerializer(serializers.ModelSerializer):
     class Meta:
         model = CourseInstance
-        fields = '__all__'
+        fields = ['id', 'year', 'semester', 'course']
