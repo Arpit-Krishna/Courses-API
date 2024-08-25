@@ -25,8 +25,7 @@ SECRET_KEY = "django-insecure-8eo3d#366x2r_-7$k9$4r!bu5+_g+!54@#6ly49%fpen%6y7+%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
-
+ALLOWED_HOSTS = ['*','localhost']  
 
 # Application definition
 
@@ -54,10 +53,16 @@ MIDDLEWARE = [
     
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # React app
-]
+CORS_ALLOW_ALL_ORIGINS = True
 
+CORS_ALLOWED_ORIGINS = [
+    
+    "http://localhost:3000",
+    "http://localhost:8080",  # React app
+    "http://localhost", 
+    "http://frontend",
+    "http://frontend:8080"
+]
 ROOT_URLCONF = "courses_api.urls"
 
 TEMPLATES = [
